@@ -25,3 +25,18 @@ eval "$(register-python-argcomplete pipx)"
 function h() {
  cd ~/github/metis-ai/bots-definition
 }
+
+# Function that creates a url of a web site and stores it in a directory to later have a direct access with Alfred. It takes two parameters: 
+# ladd url name
+# Example: ladd https://github.com github 
+function ladd() {
+    touch /Users/manuelalferez/MEGA/chrome_shortcuts/$2.webloc
+    echo "<?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>URL</key>
+            <string>$1</string>
+          </dict>
+          </plist>" > /Users/manuelalferez/MEGA/chrome_shortcuts/$2.webloc
+}
