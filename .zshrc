@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/manuelalferez/.oh-my-zsh"
+export ZSH="/Users/$(whoami)/.oh-my-zsh"
 
 export PATH=/opt/homebrew/bin:$PATH
 
@@ -18,7 +18,7 @@ envs () {
  export $(grep -v '^#' $ENV_FILE)
 }
 
-export PATH="$PATH:/Users/manuelalferez/.local/bin"
+export PATH="$PATH:/Users/$(whoami)/.local/bin"
 
 eval "$(register-python-argcomplete pipx)"
 
